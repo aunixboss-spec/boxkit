@@ -21,7 +21,10 @@ def report(folder: Path, top: int) -> int:
         print(f"Не папка: {folder}")
         return 1
 
-    files = [p for p in folder.rglob("*") if p.is_file()]
+    files = [
+        p for p in folder.rglob("*")
+        if p.is_file() and not any(part.startswith(".") for part in p.relative_to(folder).parts)
+    ]
     sizes = sorted(((p.stat().st_size, p) for p in files), key=lambda x: -x[0])
 
     print(f"Файлов: {len(files)}, суммарно: {human_size(sum(s for s, _ in sizes))}\n")
