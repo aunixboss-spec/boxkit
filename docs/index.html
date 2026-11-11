@@ -9,7 +9,7 @@
 </head>
 <body>
   <header class="nav">
-    <a class="logo" href="#">🧰 boxkit</a>
+    <a class="logo" href="#"><svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>boxkit</a>
     <nav>
       <a href="#tools">Утилиты</a>
       <a href="#quickstart">Быстрый старт</a>
@@ -24,9 +24,9 @@
         <span class="pill">0 зависимостей</span>
         <span class="pill">MIT</span>
       </div>
-      <h1>Крошечные CLI-утилиты,<br /><span class="accent">которые просто работают</span></h1>
+      <h1>boxkit</h1>
       <p class="hero-sub">
-        boxkit — набор инструментов для терминала на чистом Python.
+        Набор CLI-утилит для терминала на чистом Python.
         Ничего устанавливать не нужно: скачал и запустил.
       </p>
       <div class="hero-actions">
@@ -45,39 +45,39 @@
     <section class="section" id="tools">
       <h2>Утилиты</h2>
       <div class="cards">
-        <article class="card">
-          <div class="card-icon">🗂️</div>
+        <article class="card" style="--i:0">
+          <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
           <h3>organizer</h3>
           <p>Раскладывает файлы по папкам-категориям: изображения, документы, аудио, видео и архивы.</p>
           <code class="card-cmd">python boxkit/organizer.py ~/Downloads</code>
         </article>
-        <article class="card">
-          <div class="card-icon">🔐</div>
+        <article class="card" style="--i:1">
+          <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
           <h3>genpass</h3>
           <p>Криптостойкие пароли через модуль <code>secrets</code>. Настраиваемая длина, без неоднозначных символов.</p>
           <code class="card-cmd">python boxkit/genpass.py -l 24 -c 3</code>
         </article>
-        <article class="card">
-          <div class="card-icon">💾</div>
+        <article class="card" style="--i:2">
+          <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="12" x2="2" y2="12"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/><line x1="6" y1="16" x2="6.01" y2="16"/><line x1="10" y1="16" x2="10.01" y2="16"/></svg>
           <h3>diskreport</h3>
           <p>Показывает, какие файлы съедают место. Топ самых больших файлов в дереве каталогов.</p>
           <code class="card-cmd">python boxkit/diskreport.py . --top 10</code>
         </article>
-        <article class="card">
-          <div class="card-icon">✏️</div>
+        <article class="card" style="--i:3">
+          <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></svg>
           <h3>renamer</h3>
           <p>Массовое переименование с нумерацией. Идеально для фото с отпуска или скриншотов.</p>
           <code class="card-cmd">python boxkit/renamer.py ./DCIM --prefix trip</code>
         </article>
-        <article class="card">
-          <div class="card-icon">⏱️</div>
+        <article class="card" style="--i:4">
+          <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
           <h3>timer</h3>
           <p>Помодоро и обратный отсчёт прямо в терминале. Без браузера, без уведомлений, без шума.</p>
           <code class="card-cmd">python boxkit/timer.py 25 --label "Работа"</code>
         </article>
-        <article class="card card-more">
-          <div class="card-icon">➕</div>
-          <h3>Скоро</h3>
+        <article class="card card-more" style="--i:5">
+          <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          <h3>roadmap</h3>
           <p>Поиск дубликатов по хэшу, генератор QR-кодов, цветной ANSI-вывод. Предлагай идеи в issues!</p>
           <code class="card-cmd">roadmap в README</code>
         </article>
