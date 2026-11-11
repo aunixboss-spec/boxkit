@@ -1,29 +1,65 @@
-# boxkit
+<div align="center">
 
-Небольшая коллекция полезных CLI-утилит на Python (только стандартная библиотека, без зависимостей).
+# 🧰 boxkit
 
-## Утилиты
+**Набор крошечных CLI-утилит на чистом Python — ничего устанавливать не нужно.**
 
-| Скрипт | Что делает |
-|---|---|
-| `boxkit/organizer.py` | Раскладывает файлы в папке по подпапкам-расширениям |
-| `boxkit/genpass.py` | Генерирует надёжные пароли |
-| `boxkit/diskreport.py` | Отчёт: самые большие файлы в дереве каталогов |
-| `boxkit/renamer.py` | Массовое переименование файлов с нумерацией |
-| `boxkit/timer.py` | Простой таймер/помодоро в терминале |
+![Python](https://img.shields.io/badge/python-3.8%2B-blue?logo=python&logoColor=white)
+![License](https://img.shields.io/badge/license-MIT-green)
+![Deps](https://img.shields.io/badge/dependencies-zero-success)
+![Platform](https://img.shields.io/badge/platform-windows%20%7C%20linux%20%7C%20macos-lightgrey)
 
-## Использование
+</div>
+
+---
+
+## ✨ Утилиты
+
+| | Скрипт | Что делает |
+|---|---|---|
+| 🗂️ | `boxkit/organizer.py` | Раскладывает файлы по папкам-категориям (images, documents, audio…) |
+| 🔐 | `boxkit/genpass.py` | Генерирует надёжные пароли через модуль `secrets` |
+| 💾 | `boxkit/diskreport.py` | Показывает самые большие файлы в дереве каталогов |
+| ✏️ | `boxkit/renamer.py` | Массово переименовывает файлы с нумерацией |
+| ⏱️ | `boxkit/timer.py` | Таймер обратного отсчёта / помодоро прямо в терминале |
+
+## 🚀 Быстрый старт
 
 ```bash
-python boxkit/organizer.py ~/Downloads
-python boxkit/genpass.py --length 20 --count 5
-python boxkit/diskreport.py . --top 10
-python boxkit/renamer.py ./photos --prefix vacation --ext jpg
-python boxkit/timer.py 25
+git clone https://github.com/aunixboss-spec/boxkit.git
+cd boxkit
 ```
 
-Все скрипты поддерживают `--help`.
+Никаких `pip install` — только стандартная библиотека. Python **3.8+**.
 
-## Требования
+## 📖 Примеры
 
-Python 3.8+. Ничего устанавливать не нужно.
+```bash
+# Навести порядок в загрузках (сначала --dry-run, потом по-настоящему)
+python boxkit/organizer.py ~/Downloads --dry-run
+python boxkit/organizer.py ~/Downloads
+
+# Три пароля по 24 символа
+python boxkit/genpass.py --length 24 --count 3
+
+# Куда делось место на диске
+python boxkit/diskreport.py . --top 10
+
+# Переименовать отпускные фото
+python boxkit/renamer.py ./DCIM --prefix vacation --ext jpg
+
+# Помодоро: 25 минут работы
+python boxkit/timer.py 25 --label "Работа"
+```
+
+Больше примеров — в [`docs/EXAMPLES.md`](docs/EXAMPLES.md).
+
+## 🗺️ Планы
+
+- [ ] `qr.py` — генерация QR-кодов
+- [ ] `dedupe.py` — поиск дубликатов файлов по хэшу
+- [ ] Цветной вывод (ANSI) для всех утилит
+
+## 📄 Лицензия
+
+Распространяется по лицензии [MIT](LICENSE).
