@@ -4,10 +4,13 @@
 
 **Набор крошечных CLI-утилит на чистом Python — ничего устанавливать не нужно.**
 
+🌐 **[Сайт проекта](https://aunixboss-spec.github.io/boxkit/)** · 📖 [Примеры](docs/EXAMPLES.md) · 📄 [Лицензия](LICENSE)
+
 ![Python](https://img.shields.io/badge/python-3.8%2B-blue?logo=python&logoColor=white)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Deps](https://img.shields.io/badge/dependencies-zero-success)
 ![Platform](https://img.shields.io/badge/platform-windows%20%7C%20linux%20%7C%20macos-lightgrey)
+![Site](https://img.shields.io/badge/site-GitHub%20Pages-58a6ff?logo=github)
 
 </div>
 
@@ -22,6 +25,13 @@
 | 💾 | `boxkit/diskreport.py` | Показывает самые большие файлы в дереве каталогов |
 | ✏️ | `boxkit/renamer.py` | Массово переименовывает файлы с нумерацией |
 | ⏱️ | `boxkit/timer.py` | Таймер обратного отсчёта / помодоро прямо в терминале |
+
+## 🌐 Сайт
+
+Лендинг проекта живёт в этом же репозитории (`docs/index.html`) и автоматически
+публикуется через **GitHub Pages**: https://aunixboss-spec.github.io/boxkit/
+
+Чтобы включить публикацию: *Settings → Pages → Source: Deploy from a branch → `main` → `/docs`*.
 
 ## 🚀 Быстрый старт
 
