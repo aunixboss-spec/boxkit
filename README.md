@@ -1,75 +1,81 @@
 <div align="center">
 
-# 🧰 boxkit
+# boxkit
 
-**Набор крошечных CLI-утилит на чистом Python — ничего устанавливать не нужно.**
+### Твой терминал перестаёт быть свалкой
 
-🌐 **[Сайт проекта](https://aunixboss-spec.github.io/boxkit/)** · 📖 [Примеры](docs/EXAMPLES.md) · 📄 [Лицензия](LICENSE)
+**5 CLI-утилит на чистом Python.** Ноль зависимостей, ноль настройки —
+скачал и запустил. Наведи порядок в файлах, сгенерируй пароль, найди, куда делось место на диске.
 
-![Python](https://img.shields.io/badge/python-3.8%2B-blue?logo=python&logoColor=white)
-![License](https://img.shields.io/badge/license-MIT-green)
-![Deps](https://img.shields.io/badge/dependencies-zero-success)
-![Platform](https://img.shields.io/badge/platform-windows%20%7C%20linux%20%7C%20macos-lightgrey)
-![Site](https://img.shields.io/badge/site-GitHub%20Pages-58a6ff?logo=github)
+[![Website](https://img.shields.io/badge/website-GitHub_Pages-58a6ff?logo=github)](https://aunixboss-spec.github.io/boxkit/)
+[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![Deps](https://img.shields.io/badge/dependencies-zero-success)](#быстрый-старт)
+[![Python](https://img.shields.io/badge/python-3.8%2B-blue?logo=python&logoColor=white)](#быстрый-старт)
+[![Platform](https://img.shields.io/badge/platform-windows%20%7C%20linux%20%7C%20macos-lightgrey)](#быстрый-старт)
 
 </div>
 
 ---
 
-## ✨ Утилиты
+## Проблема
 
-| | Скрипт | Что делает |
+Downloads — это свалка из 400 файлов. Пароли из маркета ненадёжны. Диск забит — непонятно чем.
+Для каждой мелочи ставить отдельный пакет с десятью зависимостями не хочется.
+
+## Решение
+
+**boxkit** — маленькие утилиты, которые решают одну задачу и не лезут в систему:
+только стандартная библиотека Python, ничего не устанавливается, ничего не ломается.
+
+```text
+$ python boxkit/organizer.py ~/Downloads
+
+photo.jpg   -> images/photo.jpg
+report.pdf  -> documents/report.pdf
+song.mp3    -> audio/song.mp3
+```
+
+## Что внутри
+
+| Утилита | Что делает | Почему удобно |
 |---|---|---|
-| 🗂️ | `boxkit/organizer.py` | Раскладывает файлы по папкам-категориям (images, documents, audio…) |
-| 🔐 | `boxkit/genpass.py` | Генерирует надёжные пароли через модуль `secrets` |
-| 💾 | `boxkit/diskreport.py` | Показывает самые большие файлы в дереве каталогов |
-| ✏️ | `boxkit/renamer.py` | Массово переименовывает файлы с нумерацией |
-| ⏱️ | `boxkit/timer.py` | Таймер обратного отсчёта / помодоро прямо в терминале |
+| [`organizer`](boxkit/organizer.py) | Раскладывает файлы по категориям | Сначала `--dry-run` — ничего не перемещает |
+| [`genpass`](boxkit/genpass.py) | Криптостойкие пароли | Модуль `secrets`, без неоднозначных символов |
+| [`diskreport`](boxkit/diskreport.py) | Топ самых больших файлов | Мгновенный ответ «куда делось место» |
+| [`renamer`](boxkit/renamer.py) | Массовое переименование | Нумерация с нулями: `trip01.jpg` |
+| [`timer`](boxkit/timer.py) | Помодоро в терминале | Без браузера и уведомлений |
 
-## 🌐 Сайт
+## Почему это работает
 
-Лендинг проекта живёт в этом же репозитории (`docs/index.html`) и автоматически
-публикуется через **GitHub Pages**: https://aunixboss-spec.github.io/boxkit/
+- **Zero dependencies** — только стандартная библиотека, Python 3.8+
+- **Безопасно по умолчанию** — все деструктивные операции сначала показывают план (`--dry-run`)
+- **Кроссплатформенно** — Windows, Linux, macOS из коробки
+- **Один формат** — все утилиты понимают `--help`
 
-Чтобы включить публикацию: *Settings → Pages → Source: Deploy from a branch → `main` → `/docs`*.
-
-## 🚀 Быстрый старт
+## Быстрый старт
 
 ```bash
 git clone https://github.com/aunixboss-spec/boxkit.git
 cd boxkit
-```
-
-Никаких `pip install` — только стандартная библиотека. Python **3.8+**.
-
-## 📖 Примеры
-
-```bash
-# Навести порядок в загрузках (сначала --dry-run, потом по-настоящему)
 python boxkit/organizer.py ~/Downloads --dry-run
-python boxkit/organizer.py ~/Downloads
-
-# Три пароля по 24 символа
-python boxkit/genpass.py --length 24 --count 3
-
-# Куда делось место на диске
-python boxkit/diskreport.py . --top 10
-
-# Переименовать отпускные фото
-python boxkit/renamer.py ./DCIM --prefix vacation --ext jpg
-
-# Помодоро: 25 минут работы
-python boxkit/timer.py 25 --label "Работа"
 ```
 
-Больше примеров — в [`docs/EXAMPLES.md`](docs/EXAMPLES.md).
+Больше примеров — в [`docs/EXAMPLES.md`](docs/EXAMPLES.md). Сайт проекта: [aunixboss-spec.github.io/boxkit](https://aunixboss-spec.github.io/boxkit/).
 
-## 🗺️ Планы
+## Roadmap
 
+- [ ] `dedupe.py` — поиск дубликатов по хэшу
 - [ ] `qr.py` — генерация QR-кодов
-- [ ] `dedupe.py` — поиск дубликатов файлов по хэшу
-- [ ] Цветной вывод (ANSI) для всех утилит
+- [ ] Цветной ANSI-вывод для всех утилит
 
-## 📄 Лицензия
+<div align="center">
 
-Распространяется по лицензии [MIT](LICENSE).
+**Полезно? Поставь звезду — это единственная валюта open source**
+
+[Сообщить об ошибке](https://github.com/aunixboss-spec/boxkit/issues) · [Предложить утилиту](https://github.com/aunixboss-spec/boxkit/issues)
+
+</div>
+
+---
+
+MIT © [adrenachrome](https://github.com/aunixboss-spec)
