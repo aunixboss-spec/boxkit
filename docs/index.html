@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>boxkit — полезные CLI-утилиты на чистом Python</title>
+  <meta name="description" content="Набор крошечных CLI-утилит на чистом Python. Ноль зависимостей. Наведи порядок в файлах, сгенерируй пароль, найди, куда делось место на диске." />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <header class="nav">
+    <a class="logo" href="#">🧰 boxkit</a>
+    <nav>
+      <a href="#tools">Утилиты</a>
+      <a href="#quickstart">Быстрый старт</a>
+      <a class="btn btn-sm" href="https://github.com/aunixboss-spec/boxkit" target="_blank" rel="noopener">GitHub ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-badges">
+        <span class="pill">Python 3.8+</span>
+        <span class="pill">0 зависимостей</span>
+        <span class="pill">MIT</span>
+      </div>
+      <h1>Крошечные CLI-утилиты,<br /><span class="accent">которые просто работают</span></h1>
+      <p class="hero-sub">
+        boxkit — набор инструментов для терминала на чистом Python.
+        Ничего устанавливать не нужно: скачал и запустил.
+      </p>
+      <div class="hero-actions">
+        <a class="btn" href="#quickstart">Начать за 10 секунд</a>
+        <a class="btn btn-ghost" href="https://github.com/aunixboss-spec/boxkit" target="_blank" rel="noopener">⭐ Звезду в репо</a>
+      </div>
+      <pre class="terminal" id="terminal"><code><span class="t-prompt">$</span> python boxkit/genpass.py <span class="t-flag">--length 24</span>
+<span class="t-output">Rm#8vTq2wLpZx94Kd7JfNc3b</span>
+<span class="t-prompt">$</span> python boxkit/organizer.py ~/Downloads
+<span class="t-output">photo.jpg   -&gt; images/photo.jpg</span>
+<span class="t-output">report.pdf  -&gt; documents/report.pdf</span>
+<span class="t-output">song.mp3    -&gt; audio/song.mp3</span>
+<span class="t-cursor">▊</span></code></pre>
+    </section>
+
+    <section class="section" id="tools">
+      <h2>Утилиты</h2>
+      <div class="cards">
+        <article class="card">
+          <div class="card-icon">🗂️</div>
+          <h3>organizer</h3>
+          <p>Раскладывает файлы по папкам-категориям: изображения, документы, аудио, видео и архивы.</p>
+          <code class="card-cmd">python boxkit/organizer.py ~/Downloads</code>
+        </article>
+        <article class="card">
+          <div class="card-icon">🔐</div>
+          <h3>genpass</h3>
+          <p>Криптостойкие пароли через модуль <code>secrets</code>. Настраиваемая длина, без неоднозначных символов.</p>
+          <code class="card-cmd">python boxkit/genpass.py -l 24 -c 3</code>
+        </article>
+        <article class="card">
+          <div class="card-icon">💾</div>
+          <h3>diskreport</h3>
+          <p>Показывает, какие файлы съедают место. Топ самых больших файлов в дереве каталогов.</p>
+          <code class="card-cmd">python boxkit/diskreport.py . --top 10</code>
+        </article>
+        <article class="card">
+          <div class="card-icon">✏️</div>
+          <h3>renamer</h3>
+          <p>Массовое переименование с нумерацией. Идеально для фото с отпуска или скриншотов.</p>
+          <code class="card-cmd">python boxkit/renamer.py ./DCIM --prefix trip</code>
+        </article>
+        <article class="card">
+          <div class="card-icon">⏱️</div>
+          <h3>timer</h3>
+          <p>Помодоро и обратный отсчёт прямо в терминале. Без браузера, без уведомлений, без шума.</p>
+          <code class="card-cmd">python boxkit/timer.py 25 --label "Работа"</code>
+        </article>
+        <article class="card card-more">
+          <div class="card-icon">➕</div>
+          <h3>Скоро</h3>
+          <p>Поиск дубликатов по хэшу, генератор QR-кодов, цветной ANSI-вывод. Предлагай идеи в issues!</p>
+          <code class="card-cmd">roadmap в README</code>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="quickstart">
+      <h2>Быстрый старт</h2>
+      <div class="steps">
+        <div class="step">
+          <span class="step-num">1</span>
+          <div>
+            <h3>Склонируй репо</h3>
+            <pre><code>git clone https://github.com/aunixboss-spec/boxkit.git
+cd boxkit</code></pre>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-num">2</span>
+          <div>
+            <h3>Запусти любую утилиту</h3>
+            <pre><code>python boxkit/organizer.py --help</code></pre>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-num">3</span>
+          <div>
+            <h3>Всё 🎉</h3>
+            <p>Никаких pip install, виртуальных окружений и конфигов. Нужен только Python 3.8+.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta">
+      <h2>Полезно? Скажи спасибо звездой ⭐</h2>
+      <a class="btn btn-lg" href="https://github.com/aunixboss-spec/boxkit" target="_blank" rel="noopener">Открыть на GitHub</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>boxkit · сделано с ☕ и Python · <a href="https://github.com/aunixboss-spec/boxkit/blob/main/LICENSE" target="_blank" rel="noopener">MIT License</a></p>
+  </footer>
+
+  <script src="assets/main.js"></script>
+</body>
+</html>
