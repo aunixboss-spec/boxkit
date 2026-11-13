@@ -7,6 +7,7 @@
 **6 CLI-утилит на чистом Python.** Ноль зависимостей, ноль настройки —
 скачал и запустил. Наведи порядок в файлах, сгенерируй пароль, найди, куда делось место на диске.
 
+[![CI](https://github.com/aunixboss-spec/boxkit/actions/workflows/ci.yml/badge.svg)](https://github.com/aunixboss-spec/boxkit/actions/workflows/ci.yml)
 [![Website](https://img.shields.io/badge/website-GitHub_Pages-58a6ff?logo=github)](https://aunixboss-spec.github.io/boxkit/)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Deps](https://img.shields.io/badge/dependencies-zero-success)](#быстрый-старт)
@@ -62,6 +63,16 @@ python boxkit/organizer.py ~/Downloads --dry-run
 ```
 
 Больше примеров — в [`docs/EXAMPLES.md`](docs/EXAMPLES.md). Сайт проекта: [aunixboss-spec.github.io/boxkit](https://aunixboss-spec.github.io/boxkit/).
+
+## Разработка
+
+Тесты — на чистом `unittest`, без зависимостей:
+
+```bash
+python -m unittest discover tests
+```
+
+CI гоняет их на Linux и Windows (Python 3.10–3.13). Как внести вклад — в [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
 ## Roadmap
 
