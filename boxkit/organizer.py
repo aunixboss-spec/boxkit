@@ -12,12 +12,15 @@ import sys
 from pathlib import Path
 
 CATEGORY_MAP = {
-    "images": {".jpg", ".jpeg", ".png", ".gif", ".webp", ".svg", ".bmp", ".ico"},
-    "documents": {".pdf", ".doc", ".docx", ".txt", ".md", ".rtf", ".odt", ".xlsx", ".csv", ".pptx"},
-    "audio": {".mp3", ".wav", ".flac", ".ogg", ".m4a"},
-    "video": {".mp4", ".mkv", ".avi", ".mov", ".webm"},
-    "archives": {".zip", ".rar", ".7z", ".tar", ".gz"},
-    "code": {".py", ".js", ".ts", ".html", ".css", ".json", ".xml", ".sh", ".bat", ".java", ".c", ".cpp"},
+    "images": {".jpg", ".jpeg", ".png", ".gif", ".webp", ".svg", ".bmp", ".ico", ".tiff", ".heic"},
+    "documents": {".pdf", ".doc", ".docx", ".txt", ".md", ".rtf", ".odt", ".xlsx", ".csv", ".pptx", ".epub"},
+    "audio": {".mp3", ".wav", ".flac", ".ogg", ".m4a", ".wma", ".opus"},
+    "video": {".mp4", ".mkv", ".avi", ".mov", ".webm", ".m4v", ".ts"},
+    "archives": {".zip", ".rar", ".7z", ".tar", ".gz", ".bz2", ".xz"},
+    "code": {".py", ".js", ".ts", ".html", ".css", ".json", ".xml", ".sh", ".bat", ".java", ".c", ".cpp", ".rs", ".go", ".ipynb"},
+    "fonts": {".ttf", ".otf", ".woff", ".woff2"},
+    "programs": {".exe", ".msi", ".apk", ".dmg", ".appimage", ".deb", ".rpm"},
+    "torrents": {".torrent"},
 }
 
 
