@@ -19,7 +19,7 @@ def parse_time(value: str) -> int:
     return int(value) * 60
 
 
-def run(seconds: int, label: str = "") -> None:
+def run(seconds: int, label: str = "", beep: bool = False) -> None:
     remaining = seconds
     try:
         while remaining > 0:
@@ -30,6 +30,8 @@ def run(seconds: int, label: str = "") -> None:
     except KeyboardInterrupt:
         print("\nОстановлено.")
         raise SystemExit(130)
+    if beep:
+        print("\a", end="")
     print(f"\r{label} ✅ Время вышло!        ")
 
 
@@ -37,8 +39,17 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Таймер в терминале")
     parser.add_argument("time", help="минуты (25) или М:СС (0:05)")
     parser.add_argument("--label", default="Таймер", help="подпись таймера")
+    parser.add_argument("--beep", action="store_true", help="звуковой сигнал по окончании")
     args = parser.parse_args()
-    run(parse_time(args.time), args.label)
+
+    try:
+        seconds = parse_time(args.time)
+    except ValueError:
+        parser.error(f"не понял время: {args.time!r} (примеры: 25 или 0:05)")
+    if seconds <= 0:
+        parser.error("время должно быть больше нуля")
+
+    run(seconds, args.label, beep=args.beep)
 
 
 if __name__ == "__main__":
