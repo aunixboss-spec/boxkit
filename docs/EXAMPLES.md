@@ -27,6 +27,15 @@ python boxkit/renamer.py ./DCIM --prefix vacation --ext jpg --start 1
 python boxkit/renamer.py ./DCIM --prefix vacation --ext jpg --dry-run
 ```
 
+## dedupe — дубликаты на диске
+```bash
+# Только отчёт: что где дублируется и сколько можно освободить
+python boxkit/dedupe.py ~/Downloads
+
+# Удалить копии (оригиналы остаются) — спросит подтверждение
+python boxkit/dedupe.py ~/Downloads --delete
+```
+
 ## timer — помодоро
 ```bash
 python boxkit/timer.py 25 --label "Работа"

@@ -4,7 +4,7 @@
 
 ### Твой терминал перестаёт быть свалкой
 
-**5 CLI-утилит на чистом Python.** Ноль зависимостей, ноль настройки —
+**6 CLI-утилит на чистом Python.** Ноль зависимостей, ноль настройки —
 скачал и запустил. Наведи порядок в файлах, сгенерируй пароль, найди, куда делось место на диске.
 
 [![Website](https://img.shields.io/badge/website-GitHub_Pages-58a6ff?logo=github)](https://aunixboss-spec.github.io/boxkit/)
@@ -44,6 +44,7 @@ song.mp3    -> audio/song.mp3
 | [`diskreport`](boxkit/diskreport.py) | Топ самых больших файлов | Мгновенный ответ «куда делось место» |
 | [`renamer`](boxkit/renamer.py) | Массовое переименование | Нумерация с нулями: `trip01.jpg` |
 | [`timer`](boxkit/timer.py) | Помодоро в терминале | Без браузера и уведомлений |
+| [`dedupe`](boxkit/dedupe.py) | Поиск дубликатов по хэшу | Сначала отчёт, удаление — только по `--delete` |
 
 ## Почему это работает
 
@@ -64,7 +65,7 @@ python boxkit/organizer.py ~/Downloads --dry-run
 
 ## Roadmap
 
-- [ ] `dedupe.py` — поиск дубликатов по хэшу
+- [x] `dedupe.py` — поиск дубликатов по хэшу
 - [ ] `qr.py` — генерация QR-кодов
 - [ ] Цветной ANSI-вывод для всех утилит
 
